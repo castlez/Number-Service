@@ -5,7 +5,7 @@
   <artifactId>api</artifactId>
   <packaging>war</packaging>
   <version>1.0</version>
-  <name>api Maven Webapp</name>
+  <name>Numbers Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
