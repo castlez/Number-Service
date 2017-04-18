@@ -4,16 +4,16 @@
 
 <web-app>
 	<servlet >
-         <servlet-name > A Simple Numbers Service</servlet-name >
-         <servlet-class > com.sun.jersey.spi.container.servlet.ServletContainer </servlet-class >
+         <servlet-name >A Simple Numbers Service</servlet-name >
+         <servlet-class >com.sun.jersey.spi.container.servlet.ServletContainer </servlet-class >
          <init-param >
-             <param-name > com.sun.jersey.config.property.packages </param-name >
-             <param-value > com.castle.rest </param-value >
+             <param-name >com.sun.jersey.config.property.packages </param-name >
+             <param-value >com.castle.rest </param-value >
          </init-param >
-         <load-on-startup > 1 </load-on-startup >
+         <load-on-startup >1 </load-on-startup >
      </servlet>
      <servlet-mapping >
-         <servlet-name > Numbers </servlet-name >
+         <servlet-name >HelloWorld Jersey Service </servlet-name >
          <url-pattern >/* </url-pattern >
      </servlet-mapping >
 </web-app>
