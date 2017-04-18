@@ -13,3 +13,14 @@ the Adder class responds to GET requests and will return the summation of all nu
 In the directory of the source with the POM.xml file (/api)  
 `$ mvn package`  
 `$ cp <cloned location>/api/target/api.war <Tomcat Install>/webapps`
+
+### Requests
+##### POST  
+`$ curl -X POST localhost:8080/api/values --data "value=n"`  
+where n is a number to add to the values list
+
+##### GET  
+`$ curl localhost:8080/api/sum/values`
+
+##### DELETE  
+`$ curl -X DELETE localhost:8080/api/values`
