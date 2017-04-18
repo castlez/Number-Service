@@ -8,13 +8,19 @@
 */
 
 package com.castle.rest;
+
 import java.util.ArrayList;
+import javax.persistence.Entity;
+import javax.persistence.Column;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.Produces;
 
 // Values Class
+@Entity
 public class Values {
 	
-	// Holds the values
-	
+	// Holds the values   
+	@Column(name="values")     
 	public static ArrayList<Integer> values = new ArrayList();
 	
 	// Wrappers to manipulate the list
