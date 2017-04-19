@@ -10,30 +10,53 @@
 package com.castle.rest;
 
 import java.util.ArrayList;
-import javax.persistence.Entity;
-import javax.persistence.Column;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.Produces;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.FileReader;
+import java.io.BufferedReader;
 
 // Values Class
-@Entity
 public class Values {
-	
-	// Holds the values   
-	@Column(name="values")     
-	public static ArrayList<Integer> values = new ArrayList();
+
+	// Parameters
+	public static String filename = "values.txt";
 	
 	// Wrappers to manipulate the list
 
 	public static void add(Integer v){
-		values.add(v);
+		try{
+			File v_file = new File(filename);			
+			FileWriter fw = new FileWriter(v_file, true);
+			fw.append(Integer.toString(v) + '\n');
+			fw.close();
+		}catch(Exception e){
+			System.out.println("Could not add to values");
+		}
 	}
 
 	public static ArrayList<Integer> getList(){
-		return values;
+		ArrayList<Integer> values = new ArrayList();
+		try{
+			BufferedReader br = new BufferedReader(new FileReader(filename));
+			String temp = "";
+			while((temp=br.readLine())!=null){
+				values.add(Integer.parseInt(temp));
+			}
+			br.close();
+			return values;
+		}catch(Exception e){
+			System.out.println("Values could not be retrieved");
+			return values; // empty
+		}
 	}
 
 	public static void clear(){
-		values = new ArrayList();
+		try{
+			File v_file = new File(filename);
+			v_file.delete();	
+		}catch(Exception e){
+			System.out.println("Failed to delete values");
+		}
 	}
 }

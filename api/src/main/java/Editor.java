@@ -26,7 +26,7 @@ public class Editor {
     public String postval(String val) {
     	try{
 	    	Integer t = Integer.parseInt(val.substring(val.lastIndexOf('=')+1));
-	    	Values.add(t);
+	    	Values.add(t); 
 	    	return "ok\n";    		
     	}
     	catch(Exception e){
